@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réservation confirmée · Noyau</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body data-page="vente">
+<div class="demo-banner"><strong>Projet étudiant INSEEC, démo sans vente réelle</strong> · aucun paiement, données fictives</div>
+<header id="site-header"></header>
+
+<main class="section">
+  <div class="wrap" style="max-width:760px">
+    <div class="card" style="text-align:center;padding:40px 28px">
+      <div style="width:72px;height:72px;border-radius:50%;background:#DCEBE3;color:var(--ok);display:grid;place-items:center;font-size:2rem;margin:0 auto 18px">✓</div>
+      <span class="eyebrow">Réservation confirmée (démo)</span>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.5rem)">Merci, votre programme Noyau est réservé.</h1>
+      <p class="lead" style="margin:0 auto 20px">Référence <strong id="ref"></strong>. Aucun paiement réel n'a été effectué.</p>
+      <div style="text-align:left;max-width:460px;margin:0 auto" id="recap"></div>
+    </div>
+
+    <h2 style="margin-top:44px;font-size:1.6rem">Et maintenant ?</h2>
+    <div class="grid g3">
+      <div class="card"><div class="step-num">1</div><strong>Sous 24 h</strong><p class="muted small">Votre coach référent vous appelle pour l'appel de cadrage : salle, créneaux, nombre de participants.</p></div>
+      <div class="card"><div class="step-num">2</div><strong>Sous 5 jours</strong><p class="muted small">Vous recevez le kit de lancement : affiche, message pour vos équipes et lien de réservation.</p></div>
+      <div class="card"><div class="step-num">3</div><strong>Jour J</strong><p class="muted small">Première séance découverte offerte, puis le rythme de votre formule.</p></div>
+    </div>
+    <div class="note" style="margin-top:28px">
+      <strong>Bonus démo :</strong> cette commande vient d'être ajoutée au CRM interne, à l'étape « Gagné », avec son historique et sa prochaine action.
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-dark btn-sm" href="crm.html" id="crm-link">Voir le client dans le CRM</a>
+        <a class="btn btn-ghost btn-sm" href="index.html">Retour à l'accueil</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/site.js?v=3"></script>
+<script>
+  const qs = new URLSearchParams(location.search);
+  const O = window.NOYAU_OFFERS;
+  let order = null; try { order = JSON.parse(sessionStorage.getItem('noyau-last-order')); } catch (e) {}
+  const ref = qs.get('ref') || (order && order.ref) || 'NOY-DEMO';
+  document.getElementById('ref').textContent = ref;
+  const o = O[(order && order.offre) || qs.get('offre')] || O.equipe;
+  const rows = [['Formule', o.name + ' (' + o.sessions + ')'], ['Prix', o.price.toLocaleString('fr-FR') + ' € HT / mois (' + (o.price * 1.2).toLocaleString('fr-FR') + ' € TTC)']];
+  if (order) rows.push(['Entreprise', order.entreprise + ', ' + order.effectif + ' salariés'], ['Démarrage souhaité', order.debut + ' · ' + order.ville]);
+  document.getElementById('recap').innerHTML = rows.map(([k, v]) => `<div style="display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--line)"><span class="muted">${k}</span><strong style="text-align:right">${v}</strong></div>`).join('');
+  document.getElementById('crm-link').href = 'crm.html?q=' + encodeURIComponent(ref);
+</script>
+</body>
+</html>

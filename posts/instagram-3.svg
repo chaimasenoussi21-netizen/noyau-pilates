@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350" role="img" aria-label="12 h 30, salle de réunion « Everest »">
+<rect width="1080" height="1350" fill="#1F3A33"/>
+<circle cx="960" cy="1190" r="260" fill="none" stroke="#FFC9B3" stroke-width="50" opacity=".28"/>
+<g transform="translate(80,90)"><circle cx="26" cy="26" r="23" fill="none" stroke="#FFFFFF" stroke-width="5"/><circle cx="26" cy="26" r="8" fill="#D9734E"/>
+<text x="66" y="38" font-family="Georgia,serif" font-size="38" font-weight="700" fill="#FFFFFF">Noyau</text></g>
+<text x="1000" y="128" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#FFFFFF" opacity=".6">INSTAGRAM</text>
+<text x="80" y="210" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="4" fill="#FFC9B3">COULISSES</text>
+<text y="300" font-family="Georgia,serif" font-size="92" font-weight="700" fill="#FFFFFF"><tspan x="80" dy="0">12 h 30,</tspan><tspan x="80" dy="103">salle de réunion</tspan><tspan x="80" dy="103">« Everest »</tspan></text>
+<text y="639" font-family="Helvetica,Arial,sans-serif" font-size="36" fill="#FFFFFF" opacity=".8"><tspan x="80" dy="0">Les tables poussées, les tapis déroulés.</tspan><tspan x="80" dy="46">45 minutes pour le dos.</tspan></text>
+<g transform="translate(780,860) scale(1.0)" stroke="#FFC9B3" stroke-width="14" stroke-linecap="round" fill="none">
+<circle cx="120" cy="60" r="26" fill="#FFC9B3" stroke="none"/><line x1="120" y1="90" x2="120" y2="210"/><line x1="120" y1="110" x2="60" y2="0"/><line x1="120" y1="110" x2="180" y2="0"/><line x1="120" y1="210" x2="70" y2="320"/><line x1="120" y1="210" x2="170" y2="320"/></g>
+<text x="80" y="1270" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" opacity=".75">@noyau.pilates</text>
+<text x="1000" y="1270" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#FFFFFF" opacity=".5">Projet étudiant INSEEC · démo</text>
+</svg>

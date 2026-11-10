@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" role="img" aria-label="Ta DRH a installé du Pilates à midi.">
+<rect width="1080" height="1920" fill="#1F3A33"/>
+<circle cx="960" cy="1760" r="260" fill="none" stroke="#FFC9B3" stroke-width="50" opacity=".28"/>
+<g transform="translate(80,90)"><circle cx="26" cy="26" r="23" fill="none" stroke="#FFFFFF" stroke-width="5"/><circle cx="26" cy="26" r="8" fill="#D9734E"/>
+<text x="66" y="38" font-family="Georgia,serif" font-size="38" font-weight="700" fill="#FFFFFF">Noyau</text></g>
+<text x="1000" y="128" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#FFFFFF" opacity=".6">TIKTOK</text>
+<text x="80" y="430" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="4" fill="#FFC9B3">POV</text>
+<text y="520" font-family="Georgia,serif" font-size="104" font-weight="700" fill="#FFFFFF"><tspan x="80" dy="0">Ta DRH a</tspan><tspan x="80" dy="116">installé du</tspan><tspan x="80" dy="116">Pilates</tspan><tspan x="80" dy="116">à midi.</tspan></text>
+<text y="1016" font-family="Helvetica,Arial,sans-serif" font-size="36" fill="#FFFFFF" opacity=".8"><tspan x="80" dy="0">(et le stagiaire tient la planche</tspan><tspan x="80" dy="46">plus longtemps que le CEO)</tspan></text>
+<g transform="translate(420,1440) scale(1.6)" stroke="#FFC9B3" stroke-width="14" stroke-linecap="round" fill="none">
+<circle cx="40" cy="40" r="26" fill="#FFC9B3" stroke="none"/><line x1="70" y1="60" x2="300" y2="110"/><line x1="90" y1="66" x2="80" y2="150"/><line x1="80" y1="150" x2="130" y2="150"/><line x1="300" y1="110" x2="330" y2="150"/></g>
+<text x="80" y="1840" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" opacity=".75">@noyau.pilates</text>
+<text x="1000" y="1840" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#FFFFFF" opacity=".5">Projet étudiant INSEEC · démo</text>
+</svg>

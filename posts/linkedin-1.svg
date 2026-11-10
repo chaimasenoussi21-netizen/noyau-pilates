@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350" role="img" aria-label="8 heures assis. Et après ?">
+<rect width="1080" height="1350" fill="#1F3A33"/>
+<circle cx="960" cy="1190" r="260" fill="none" stroke="#FFC9B3" stroke-width="50" opacity=".28"/>
+<g transform="translate(80,90)"><circle cx="26" cy="26" r="23" fill="none" stroke="#FFFFFF" stroke-width="5"/><circle cx="26" cy="26" r="8" fill="#D9734E"/>
+<text x="66" y="38" font-family="Georgia,serif" font-size="38" font-weight="700" fill="#FFFFFF">Noyau</text></g>
+<text x="1000" y="128" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="3" fill="#FFFFFF" opacity=".6">LINKEDIN</text>
+<text x="80" y="210" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="4" fill="#FFC9B3">CARROUSEL · 1/6</text>
+<text y="300" font-family="Georgia,serif" font-size="92" font-weight="700" fill="#FFFFFF"><tspan x="80" dy="0">8 heures assis.</tspan><tspan x="80" dy="103">Et après ?</tspan></text>
+<text y="536" font-family="Helvetica,Arial,sans-serif" font-size="36" fill="#FFFFFF" opacity=".8"><tspan x="80" dy="0">Ce que la sédentarité coûte vraiment</tspan><tspan x="80" dy="46">à votre entreprise. Les chiffres →</tspan></text>
+<g transform="translate(700,820) scale(1.4)" stroke="#FFC9B3" stroke-width="14" stroke-linecap="round" fill="none">
+<circle cx="120" cy="30" r="26" fill="#FFC9B3" stroke="none"/><line x1="120" y1="60" x2="120" y2="170"/><line x1="120" y1="90" x2="40" y2="40"/><line x1="120" y1="90" x2="200" y2="40"/><line x1="120" y1="170" x2="200" y2="170"/><line x1="200" y1="170" x2="200" y2="250"/><line x1="70" y1="180" x2="70" y2="260"/><line x1="60" y1="175" x2="230" y2="175" stroke-width="10" opacity=".5"/></g>
+<text x="80" y="1270" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" opacity=".75">noyau-demo.fr</text>
+<text x="1000" y="1270" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#FFFFFF" opacity=".5">Projet étudiant INSEEC · démo</text>
+</svg>

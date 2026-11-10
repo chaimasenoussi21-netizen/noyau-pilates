@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réserver · Noyau</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body data-page="vente">
+<div class="demo-banner"><strong>Projet étudiant INSEEC, démo sans vente réelle</strong> · aucun paiement, données fictives</div>
+<header id="site-header"></header>
+
+<main class="section">
+  <div class="wrap">
+    <span class="eyebrow">Réservation en ligne</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">Réserver votre programme Noyau</h1>
+    <div class="steps" id="steps"><span>1. Formule</span><span>2. Entreprise</span><span>3. Paiement</span></div>
+
+    <div class="co-grid">
+      <form id="checkout" novalidate>
+        <!-- STEP 1 -->
+        <div data-step="1">
+          <h2 style="font-size:1.5rem">Choisissez votre formule</h2>
+          <label class="choice"><input type="radio" name="offre" value="essentiel"><strong>Essentiel · 390 € HT / mois</strong><br><span class="muted small">1 séance de 45 min par semaine · jusqu'à 15 participants · matériel fourni</span></label>
+          <label class="choice"><input type="radio" name="offre" value="equipe" checked><strong>Équipe · 690 € HT / mois</strong> <span class="chip">Le plus choisi</span><br><span class="muted small">2 séances par semaine · bilan chiffré à 3 mois · atelier ergonomie trimestriel</span></label>
+          <label class="choice"><input type="radio" name="offre" value="entreprise"><strong>Entreprise · 1 290 € HT / mois</strong><br><span class="muted small">4 séances par semaine · 2 coachs · bilan trimestriel et atelier mensuel</span></label>
+          <div class="form-row" style="margin-top:8px">
+            <div class="field"><label for="debut">Date de démarrage souhaitée</label><input type="date" id="debut" required></div>
+            <div class="field"><label for="ville">Ville d'intervention</label><select id="ville"><option>Lyon</option><option>Villeurbanne</option><option>Paris</option><option>Petite couronne parisienne</option></select></div>
+          </div>
+          <button type="button" class="btn btn-primary" data-next>Continuer</button>
+        </div>
+
+        <!-- STEP 2 -->
+        <div data-step="2" hidden>
+          <h2 style="font-size:1.5rem">Votre entreprise</h2>
+          <p class="note">Démo : utilisez des informations fictives. Les champs sont pré-remplis pour aller plus vite.</p>
+          <div class="form-row">
+            <div class="field"><label for="entreprise">Entreprise</label><input id="entreprise" required value="Société Démo"></div>
+            <div class="field"><label for="effectif">Nombre de salariés</label><input id="effectif" type="number" min="1" required value="80"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="nom">Nom du contact</label><input id="nom" required value="Alex Exemple"></div>
+            <div class="field"><label for="poste">Fonction</label><input id="poste" value="Responsable RH"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="email">Email</label><input id="email" type="email" required value="alex@societe-demo.example"></div>
+            <div class="field"><label for="tel">Téléphone</label><input id="tel" value="06 00 00 00 00"></div>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button type="button" class="btn btn-ghost" data-prev>Retour</button>
+            <button type="button" class="btn btn-primary" data-next>Continuer vers le paiement</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div data-step="3" hidden>
+          <h2 style="font-size:1.5rem">Paiement simulé</h2>
+          <div class="card" style="margin-bottom:16px">
+            <p style="margin:0 0 10px"><strong>Mode de paiement :</strong> prélèvement SEPA mensuel (simulation)</p>
+            <p class="muted small" style="margin:0">Sur ce site de démonstration, aucune coordonnée bancaire n'est demandée et aucune somme n'est débitée. Le bouton ci-dessous simule la validation du mandat et de la première échéance.</p>
+          </div>
+          <label class="choice" style="font-weight:500"><input type="checkbox" id="cgv" required> J'accepte les conditions de l'offre : engagement de 3 mois, puis résiliable chaque mois avec 30 jours de préavis.</label>
+          <p class="small" id="err" style="color:var(--bad);min-height:1.2em"></p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button type="button" class="btn btn-ghost" data-prev>Retour</button>
+            <button type="submit" class="btn btn-primary" id="pay">Simuler le paiement et confirmer</button>
+          </div>
+        </div>
+      </form>
+
+      <aside class="summary" aria-live="polite">
+        <h3 style="margin-bottom:12px">Récapitulatif</h3>
+        <div class="row"><span>Formule</span><strong id="s-name"></strong></div>
+        <div class="row"><span>Séances / mois</span><span id="s-sess"></span></div>
+        <div class="row"><span>Prix mensuel HT</span><span id="s-ht"></span></div>
+        <div class="row"><span>TVA 20 %</span><span id="s-tva"></span></div>
+        <div class="row total"><span>1re échéance TTC</span><span id="s-ttc"></span></div>
+        <p class="small muted" style="margin:12px 0 0">Engagement 3 mois, soit <span id="s-engage"></span> HT au total. Séance d'essai offerte avant le démarrage.</p>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/store.js?v=3"></script>
+<script>
+  const O = window.NOYAU_OFFERS;
+  const eur = n => n.toLocaleString('fr-FR', {minimumFractionDigits: 0, maximumFractionDigits: 2}) + ' €';
+  const form = document.getElementById('checkout');
+  const qs = new URLSearchParams(location.search);
+  if (O[qs.get('offre')]) form.querySelector(`input[value="${qs.get('offre')}"]`).checked = true;
+  const d = new Date(); d.setDate(d.getDate() + 14);
+  document.getElementById('debut').value = d.toISOString().slice(0, 10);
+  document.getElementById('debut').min = new Date().toISOString().slice(0, 10);
+
+  let step = 1;
+  function show(n) {
+    step = n;
+    form.querySelectorAll('[data-step]').forEach(el => el.hidden = +el.dataset.step !== n);
+    document.querySelectorAll('#steps span').forEach((s, i) => s.className = i + 1 === n ? 'on' : i + 1 < n ? 'done' : '');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+  function current() { return O[form.querySelector('input[name="offre"]:checked').value]; }
+  function summary() {
+    const o = current();
+    document.getElementById('s-name').textContent = o.name;
+    document.getElementById('s-sess').textContent = o.perMonth + ' × 45 min';
+    document.getElementById('s-ht').textContent = eur(o.price);
+    document.getElementById('s-tva').textContent = eur(o.price * 0.2);
+    document.getElementById('s-ttc').textContent = eur(o.price * 1.2);
+    document.getElementById('s-engage').textContent = eur(o.price * 3);
+  }
+  form.addEventListener('change', summary); summary();
+
+  function valid(n) {
+    const box = form.querySelector(`[data-step="${n}"]`);
+    for (const el of box.querySelectorAll('[required]')) { if (!el.checkValidity()) { el.reportValidity(); return false; } }
+    return true;
+  }
+  form.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => { if (valid(step)) show(step + 1); }));
+  form.querySelectorAll('[data-prev]').forEach(b => b.addEventListener('click', () => show(step - 1)));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!document.getElementById('cgv').checked) { document.getElementById('err').textContent = 'Merci d\'accepter les conditions de l\'offre.'; return; }
+    const btn = document.getElementById('pay'); btn.disabled = true; btn.textContent = 'Validation en cours…';
+    const o = current();
+    const ref = 'NOY-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+    const order = {
+      ref, offre: o.id, debut: new Date(document.getElementById('debut').value).toLocaleDateString('fr-FR'),
+      ville: document.getElementById('ville').value, entreprise: document.getElementById('entreprise').value.trim(),
+      effectif: +document.getElementById('effectif').value, nom: document.getElementById('nom').value.trim(),
+      poste: document.getElementById('poste').value.trim(), email: document.getElementById('email').value.trim(),
+      tel: document.getElementById('tel').value.trim()
+    };
+    NoyauStore.addOrder(order);
+    try { sessionStorage.setItem('noyau-last-order', JSON.stringify(order)); } catch (err) {}
+    setTimeout(() => location.href = 'confirmation.html?ref=' + encodeURIComponent(ref) + '&offre=' + o.id, 900);
+  });
+</script>
+</body>
+</html>

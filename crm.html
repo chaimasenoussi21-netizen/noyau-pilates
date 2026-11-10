@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRM interne · Noyau</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+<style>
+  .crm-top{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;padding:36px 0 18px}
+  .tabs{display:flex;gap:6px;background:var(--sand-2);padding:5px;border-radius:999px;width:max-content;max-width:100%;overflow-x:auto}
+  .tabs button{border:none;background:none;font:inherit;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;color:var(--muted);white-space:nowrap}
+  .tabs button.on{background:var(--paper);color:var(--forest);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media (max-width:860px){.kpis{grid-template-columns:1fr 1fr}}
+  .kpi{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .kpi .v{font-family:var(--serif);font-size:2rem;color:var(--forest);line-height:1.1}
+  .kpi .l{font-size:.82rem;color:var(--muted);font-weight:600}
+  .kpi .h{font-size:.76rem;color:var(--muted);margin-top:4px}
+  .bars .b{display:grid;grid-template-columns:130px 1fr 44px;gap:10px;align-items:center;font-size:.88rem;margin:8px 0}
+  .bars .t{background:var(--sand-2);border-radius:6px;height:14px;overflow:hidden}
+  .bars .f{background:var(--forest);height:100%;border-radius:6px}
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .filters input{flex:2;min-width:200px}.filters select{flex:1;min-width:150px}
+  .stage{display:inline-block;padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700;white-space:nowrap}
+  .st-nouveau{background:#E4EEF6;color:var(--info)}.st-contacte{background:#F6EDD9;color:var(--warn)}
+  .st-proposition{background:#F8E4DA;color:var(--clay-2)}.st-gagne{background:#DCEBE3;color:var(--ok)}.st-perdu{background:#EEE;color:#777}
+  tbody tr{cursor:pointer}tbody tr:hover td{background:#FBF7F1}
+  .board{display:grid;grid-template-columns:repeat(5,minmax(220px,1fr));gap:12px;overflow-x:auto;padding-bottom:12px}
+  .col{background:var(--sand-2);border-radius:16px;padding:10px;min-height:300px}
+  .col h4{margin:4px 6px 10px;font-size:.85rem;display:flex;justify-content:space-between;color:var(--forest)}
+  .col.over{outline:2px dashed var(--clay)}
+  .deal{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px;cursor:grab;font-size:.88rem}
+  .deal strong{display:block;color:var(--forest)}
+  .deal .meta{color:var(--muted);font-size:.78rem;margin:3px 0 8px}
+  .deal .acts{display:flex;justify-content:space-between;align-items:center;gap:6px}
+  .deal button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:3px 8px;font:inherit;font-size:.75rem;cursor:pointer}
+  .modal-bg{position:fixed;inset:0;background:rgba(27,31,29,.45);display:none;z-index:100;justify-content:flex-end}
+  .modal-bg.open{display:flex}
+  .drawer{background:var(--paper);width:min(520px,100%);height:100%;overflow-y:auto;padding:26px}
+  .kv{display:grid;grid-template-columns:130px 1fr;gap:6px 12px;font-size:.9rem;margin:14px 0}
+  .kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:500}
+  .timeline{border-left:2px solid var(--line);margin:10px 0 0 6px;padding-left:16px}
+  .timeline div{position:relative;margin-bottom:14px;font-size:.88rem}
+  .timeline div::before{content:"";position:absolute;left:-22px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--clay)}
+  .next{background:#FFF6F1;border:1px solid #F3D3C4;border-radius:12px;padding:12px;font-size:.9rem}
+</style>
+</head>
+<body data-page="crm">
+<div class="demo-banner"><strong>Projet étudiant INSEEC, démo sans vente réelle</strong> · aucun paiement, données fictives</div>
+<header id="site-header"></header>
+
+<main class="wrap" style="padding-bottom:60px">
+  <div class="crm-top">
+    <div>
+      <span class="eyebrow">Outil interne · accès démo libre, sans compte</span>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.4rem);margin:0">CRM Noyau</h1>
+      <p class="muted small" style="margin:6px 0 0">Données fictives, enregistrées uniquement dans votre navigateur. <button class="btn btn-ghost btn-sm" id="reset" style="margin-left:6px">Réinitialiser la démo</button></p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="on" data-tab="dash">Tableau de bord</button>
+      <button data-tab="pipe">Pipeline</button>
+      <button data-tab="list">Contacts</button>
+    </div>
+  </div>
+
+  <section id="tab-dash">
+    <div class="kpis" id="kpis"></div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h3>Contacts par source</h3><div class="bars" id="by-source"></div></div>
+      <div class="card"><h3>Prochaines actions</h3><div id="todo"></div></div>
+    </div>
+  </section>
+
+  <section id="tab-pipe" hidden>
+    <p class="muted small">Faites glisser une carte d'une colonne à l'autre, ou utilisez le bouton « Étape suivante ». Cliquez sur un nom pour ouvrir la fiche.</p>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section id="tab-list" hidden>
+    <div class="filters">
+      <input id="q" type="search" placeholder="Rechercher un nom, une entreprise, une ville, une commande…">
+      <select id="f-stage"><option value="">Toutes les étapes</option></select>
+      <select id="f-source"><option value="">Toutes les sources</option></select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Contact</th><th>Entreprise</th><th>Source</th><th>Étape</th><th>Offre</th><th>Prochaine action</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="small muted" id="count"></p>
+  </section>
+</main>
+
+<div class="modal-bg" id="modal" aria-hidden="true"><aside class="drawer" role="dialog" aria-modal="true" id="drawer"></aside></div>
+
+<footer id="site-footer"></footer>
+<script src="assets/site.js?v=3"></script>
+<script src="assets/store.js?v=3"></script>
+<script>
+  const S = NoyauStore, STAGES = S.STAGES, SN = Object.fromEntries(STAGES);
+  const eur = n => n.toLocaleString('fr-FR') + ' €';
+  const fd = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', {day: '2-digit', month: 'short', year: 'numeric'});
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const stageTag = s => `<span class="stage st-${s}">${SN[s]}</span>`;
+
+  // tabs
+  document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+    ['dash', 'pipe', 'list'].forEach(t => document.getElementById('tab-' + t).hidden = t !== b.dataset.tab);
+  }));
+
+  function dash() {
+    const all = S.all(), won = all.filter(c => c.stage === 'gagne'), lost = all.filter(c => c.stage === 'perdu');
+    const mrr = won.reduce((s, c) => s + c.valeur, 0);
+    const pipe = all.filter(c => c.stage === 'proposition').reduce((s, c) => s + c.valeur, 0);
+    const conv = all.length ? won.length / all.length * 100 : 0;
+    const close = (won.length + lost.length) ? won.length / (won.length + lost.length) * 100 : 0;
+    document.getElementById('kpis').innerHTML = [
+      ['Chiffre d\'affaires mensuel', eur(mrr) + ' HT', `soit ${eur(mrr * 12)} HT sur 12 mois`],
+      ['Clients actifs', won.length, `${all.length} contacts au total`],
+      ['Taux de conversion', conv.toFixed(1).replace('.', ',') + ' %', `clients / contacts · closing ${close.toFixed(0)} % (gagnés / clôturés)`],
+      ['Pipeline en proposition', eur(pipe) + ' HT', `${all.filter(c => c.stage === 'proposition').length} devis en attente, par mois`]
+    ].map(([l, v, h]) => `<div class="kpi"><div class="l">${l}</div><div class="v">${v}</div><div class="h">${h}</div></div>`).join('');
+    const src = {}; all.forEach(c => src[c.source] = (src[c.source] || 0) + 1);
+    const max = Math.max(...Object.values(src));
+    document.getElementById('by-source').innerHTML = Object.entries(src).sort((a, b) => b[1] - a[1])
+      .map(([k, v]) => `<div class="b"><span>${k}</span><div class="t"><div class="f" style="width:${v / max * 100}%"></div></div><strong>${v}</strong></div>`).join('');
+    const todo = all.filter(c => c.stage !== 'perdu' && c.prochaine).sort((a, b) => a.prochaine.date.localeCompare(b.prochaine.date)).slice(0, 6);
+    document.getElementById('todo').innerHTML = todo.map(c => `<div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer" data-open="${c.id}"><span><strong>${esc(c.prochaine.label)}</strong><br><span class="muted">${esc(c.nom)} · ${esc(c.entreprise)}</span></span><span class="muted" style="white-space:nowrap">${fd(c.prochaine.date)}</span></div>`).join('');
+  }
+
+  function board() {
+    const all = S.all();
+    document.getElementById('board').innerHTML = STAGES.map(([k, label], i) => {
+      const items = all.filter(c => c.stage === k);
+      return `<div class="col" data-stage="${k}"><h4><span>${label}</span><span>${items.length}</span></h4>${items.map(c => `
+        <div class="deal" draggable="true" data-id="${c.id}">
+          <strong data-open="${c.id}" style="cursor:pointer">${esc(c.entreprise)}</strong>
+          <div class="meta">${esc(c.nom)} · ${S.OFFER_NAMES[c.offre]} · ${eur(c.valeur)}/mois</div>
+          <div class="acts"><span class="chip">${esc(c.source)}</span>${i < 3 ? `<button data-adv="${c.id}">Étape suivante →</button>` : ''}</div>
+        </div>`).join('')}</div>`;
+    }).join('');
+  }
+
+  function list() {
+    const q = document.getElementById('q').value.trim().toLowerCase(), fs = document.getElementById('f-stage').value, fo = document.getElementById('f-source').value;
+    const rows = S.all().filter(c => (!fs || c.stage === fs) && (!fo || c.source === fo) &&
+      (!q || [c.nom, c.entreprise, c.ville, c.secteur, c.email, c.commande].join(' ').toLowerCase().includes(q)));
+    document.getElementById('rows').innerHTML = rows.map(c => `<tr data-open="${c.id}">
+      <td><strong>${esc(c.nom)}</strong><br><span class="muted small">${esc(c.poste)}</span></td>
+      <td>${esc(c.entreprise)}<br><span class="muted small">${esc(c.ville)} · ${esc(c.effectif)} sal.</span></td>
+      <td><span class="chip">${esc(c.source)}</span></td><td>${stageTag(c.stage)}</td>
+      <td>${S.OFFER_NAMES[c.offre]}<br><span class="muted small">${eur(c.valeur)} HT/mois</span>${c.evenement ? '<br><span class="chip" style="margin-top:4px">Événement</span>' : ''}</td>
+      <td class="small">${c.prochaine ? esc(c.prochaine.label) + '<br><span class="muted">' + fd(c.prochaine.date) + '</span>' : '–'}</td></tr>`).join('') ||
+      '<tr><td colspan="6" class="muted">Aucun contact ne correspond.</td></tr>';
+    document.getElementById('count').textContent = rows.length + ' contact(s) affiché(s)';
+  }
+
+  function render() { dash(); board(); list(); }
+
+  // filters
+  const srcs = [...new Set(S.all().map(c => c.source))].sort();
+  document.getElementById('f-source').innerHTML += srcs.map(s => `<option>${s}</option>`).join('');
+  document.getElementById('f-stage').innerHTML += STAGES.map(([k, l]) => `<option value="${k}">${l}</option>`).join('');
+  ['q', 'f-stage', 'f-source'].forEach(id => document.getElementById(id).addEventListener('input', list));
+
+  function move(id, stage) {
+    const c = S.get(id); if (!c || c.stage === stage) return;
+    S.update(id, {stage}); S.addNote(id, 'Étape', `Passage de « ${SN[c.stage]} » à « ${SN[stage]} ».`); render();
+    if (document.getElementById('modal').classList.contains('open')) openC(id);
+  }
+
+  // drawer
+  const modal = document.getElementById('modal'), drawer = document.getElementById('drawer');
+  function openC(id) {
+    const c = S.get(id); if (!c) return;
+    drawer.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:start;gap:10px">
+        <div><span class="eyebrow" style="margin:0">Fiche contact #${c.id}</span><h2 style="font-size:1.6rem;margin:4px 0">${esc(c.nom)}</h2><div class="muted">${esc(c.poste)} · ${esc(c.entreprise)}</div></div>
+        <button class="btn btn-ghost btn-sm" id="close">Fermer</button>
+      </div>
+      <div style="margin-top:14px">${stageTag(c.stage)}</div>
+      <dl class="kv">
+        <dt>Email</dt><dd>${esc(c.email)}</dd><dt>Téléphone</dt><dd>${esc(c.tel)}</dd>
+        <dt>Entreprise</dt><dd>${esc(c.entreprise)} · ${esc(c.secteur)}</dd><dt>Ville</dt><dd>${esc(c.ville)}</dd>
+        <dt>Effectif</dt><dd>${esc(c.effectif)} salariés</dd><dt>Source</dt><dd>${esc(c.source)}</dd>
+        <dt>Offre visée</dt><dd>${S.OFFER_NAMES[c.offre]} · ${eur(c.valeur)} HT/mois</dd>${c.commande ? `<dt>Commande</dt><dd>${esc(c.commande)}</dd>` : ''}${c.evenement ? `<dt>Événement</dt><dd>${esc(c.evenement)}</dd>` : ''}
+      </dl>
+      <label for="stage-sel">Étape du pipeline</label>
+      <select id="stage-sel">${STAGES.map(([k, l]) => `<option value="${k}" ${k === c.stage ? 'selected' : ''}>${l}</option>`).join('')}</select>
+      <h3 style="margin-top:24px">Prochaine action</h3>
+      <div class="next"><strong>${c.prochaine ? esc(c.prochaine.label) : 'Aucune'}</strong>${c.prochaine ? ' · ' + fd(c.prochaine.date) : ''}</div>
+      <form id="next-form" class="form-row" style="margin-top:10px"><input id="next-label" placeholder="Nouvelle action" required><div style="display:flex;gap:8px"><input id="next-date" type="date" required><button class="btn btn-dark btn-sm">OK</button></div></form>
+      <h3 style="margin-top:24px">Historique des échanges</h3>
+      <form id="note-form" style="display:flex;gap:8px;margin-bottom:8px"><select id="note-type" style="max-width:120px"><option>Appel</option><option>Mail</option><option>Rendez-vous</option><option>LinkedIn</option><option>Note</option></select><input id="note-text" placeholder="Ajouter un échange…" required><button class="btn btn-dark btn-sm">Ajouter</button></form>
+      <div class="timeline">${c.historique.slice().reverse().map(e => `<div><strong>${esc(e.type)}</strong> · <span class="muted">${fd(e.date)}</span><br>${esc(e.note)}</div>`).join('')}</div>`;
+    modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+    drawer.querySelector('#close').onclick = closeC;
+    drawer.querySelector('#stage-sel').onchange = e => move(c.id, e.target.value);
+    drawer.querySelector('#note-form').onsubmit = e => { e.preventDefault(); S.addNote(c.id, drawer.querySelector('#note-type').value, drawer.querySelector('#note-text').value.trim()); render(); openC(c.id); };
+    drawer.querySelector('#next-form').onsubmit = e => { e.preventDefault(); S.update(c.id, {prochaine: {label: drawer.querySelector('#next-label').value.trim(), date: drawer.querySelector('#next-date').value}}); render(); openC(c.id); };
+  }
+  function closeC() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+  modal.addEventListener('click', e => { if (e.target === modal) closeC(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeC(); });
+
+  document.body.addEventListener('click', e => {
+    const adv = e.target.closest('[data-adv]');
+    if (adv) { const c = S.get(+adv.dataset.adv); const i = STAGES.findIndex(s => s[0] === c.stage); move(c.id, STAGES[i + 1][0]); return; }
+    const op = e.target.closest('[data-open]'); if (op) openC(+op.dataset.open);
+  });
+
+  // drag & drop
+  const boardEl = document.getElementById('board');
+  boardEl.addEventListener('dragstart', e => { const d = e.target.closest('.deal'); if (d) e.dataTransfer.setData('text/plain', d.dataset.id); });
+  boardEl.addEventListener('dragover', e => { const col = e.target.closest('.col'); if (col) { e.preventDefault(); col.classList.add('over'); } });
+  boardEl.addEventListener('dragleave', e => { const col = e.target.closest('.col'); if (col) col.classList.remove('over'); });
+  boardEl.addEventListener('drop', e => { const col = e.target.closest('.col'); if (!col) return; e.preventDefault(); col.classList.remove('over'); move(+e.dataTransfer.getData('text/plain'), col.dataset.stage); });
+
+  document.getElementById('reset').onclick = () => { if (confirm('Remettre les 22 contacts de démo d\'origine ? Les commandes passées sur le site seront effacées.')) { S.reset(); render(); } };
+
+  render();
+  const q0 = new URLSearchParams(location.search).get('q');
+  if (q0) { document.querySelector('[data-tab="list"]').click(); document.getElementById('q').value = q0; list(); const m = S.all().find(c => c.commande === q0); if (m) openC(m.id); }
+</script>
+</body>
+</html>

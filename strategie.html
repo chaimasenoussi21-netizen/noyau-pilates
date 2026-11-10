@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dossier stratégique · Noyau</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=3">
+<style>
+  .persona{display:grid;grid-template-columns:84px 1fr;gap:18px}
+  .avatar{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.8rem;color:#fff}
+  .pkv{display:grid;grid-template-columns:120px 1fr;gap:4px 12px;font-size:.9rem;margin-top:12px}
+  .pkv dt{color:var(--muted)}.pkv dd{margin:0}
+  .funnel div{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-radius:12px;margin:0 auto 6px;color:#fff;font-weight:600;font-size:.92rem}
+  .est{display:inline-block;background:#FFF1D6;color:#8A5A00;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em}
+  .calc{font-family:ui-monospace,Menlo,monospace;font-size:.84rem;background:var(--sand);border-radius:10px;padding:12px 14px;margin-top:10px;line-height:1.7}
+  .sources li{margin-bottom:8px;font-size:.9rem}
+</style>
+</head>
+<body data-page="strategie">
+<div class="demo-banner"><strong>Projet étudiant INSEEC, démo sans vente réelle</strong> · aucun paiement, données fictives</div>
+<header id="site-header"></header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Dossier stratégique</span>
+      <h1>Pourquoi Noyau a sa place sur le marché</h1>
+      <p class="lead">Chaque chiffre de marché renvoie à sa source. Quand aucune source publique n'existe, le chiffre est marqué <span class="est">Estimation</span> et le calcul est donné.</p>
+      <nav class="toc"><a href="#probleme">1. Problème</a><a href="#cible">2. Cible</a><a href="#marche">3. Marché</a><a href="#concurrence">4. Concurrence</a><a href="#prix">5. Prix</a><a href="#modele">6. Modèle économique</a><a href="#sources">Sources</a></nav>
+    </div>
+  </div>
+
+  <!-- 1 PROBLEME -->
+  <section class="section" id="probleme">
+    <div class="wrap">
+      <span class="eyebrow">1 · Le problème</span>
+      <h2>Des salariés assis toute la journée, des douleurs qui finissent en arrêts</h2>
+      <div class="grid g3" style="margin-top:24px">
+        <div class="card"><h3>Qui le vit ?</h3><p>Les salariés de bureau (tech, conseil, agences, sièges sociaux) qui passent l'essentiel de leur journée devant un écran. Et les RH, qui en paient la facture en absences et en turnover.</p></div>
+        <div class="card"><h3>À quelle fréquence ?</h3><p><strong>Tous les jours.</strong> 38 % des adultes sont sédentaires plus de 8 heures par jour, et seuls 5 % ont une activité physique suffisante pour être protégés.
+          <a class="src-link" href="https://www.anses.fr/fr/content/manque-dactivite-physique-et-exces-de-sedentarite-une-priorite-de-sante-publique" target="_blank" rel="noopener">Anses, 2022</a></p></div>
+        <div class="card"><h3>Ce que ça coûte</h3><p>Les troubles musculosquelettiques (dos, nuque, poignets) sont la <strong>1re maladie professionnelle reconnue</strong> en France.
+          <a class="src-link" href="https://www.inrs.fr/accueil/risques/tms-troubles-musculosquelettiques/statistiques.html" target="_blank" rel="noopener">INRS</a>. L'absentéisme atteint 5,1 % dans le privé en 2024, +34 % depuis 2019.
+          <a class="src-link" href="https://www.editions-tissot.fr/actualite/sante-securite/absenteisme-au-travail-ce-quil-faut-retenir-du-barometre-de-wtw" target="_blank" rel="noopener">WTW 2025</a></p></div>
+      </div>
+      <div class="card" style="margin-top:20px">
+        <h3>Ce que l'absentéisme coûte à une entreprise de 80 salariés <span class="est">Estimation</span></h3>
+        <p class="muted">Ordre de grandeur pour un client type de la formule Équipe. Toutes les absences ne viennent pas du dos : l'objectif est de montrer l'enjeu, pas d'attribuer tout ce coût à la sédentarité.</p>
+        <div class="calc">80 salariés × 218 jours travaillés × 5,1 % d'absentéisme = 889 jours d'absence par an<br>
+          889 jours × 250 € (coût journalier chargé moyen, hypothèse) = <strong>≈ 222 000 € par an</strong><br>
+          Si le programme évite seulement 3 % de ces jours : 27 jours × 250 € = 6 700 €, à comparer aux 8 280 € HT/an de la formule Équipe,<br>
+          sans compter le gain de productivité de 6 à 9 % mesuré chez les sédentaires qui se remettent au sport (<a href="https://www.medef.com/communiques-de-presse-download/le-medef-le-cnosf-et-ag2r-la-mondiale-devoilent-la-premiere-etude-sur-l-impact-economique-de-l-activite-physique-et-sportive-sur-l-entreprise-le-salarie-et-la-societe" target="_blank" rel="noopener">MEDEF / CNOSF / AG2R, 2015</a>).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 CIBLE -->
+  <section class="section alt" id="cible">
+    <div class="wrap">
+      <span class="eyebrow">2 · La cible</span>
+      <h2>Deux personas : celle qui décide et celui qui organise</h2>
+      <p class="lead">Notre client est l'entreprise de 20 à 300 salariés, à dominante bureau, à Lyon et à Paris. Celui qui achète n'est pas celui qui pratique : nous parlons d'abord aux RH.</p>
+      <div class="grid g2" style="margin-top:24px">
+        <div class="card persona">
+          <div class="avatar" style="background:var(--forest)">CM</div>
+          <div>
+            <h3 style="margin-bottom:2px">Claire, la DRH qui doit prouver</h3>
+            <p class="muted small" style="margin:0">Persona fictif</p>
+            <dl class="pkv">
+              <dt>Âge</dt><dd>42 ans</dd>
+              <dt>Métier</dt><dd>DRH d'un cabinet de conseil de 180 salariés, Lyon 6e</dd>
+              <dt>Budget</dt><dd>Enveloppe QVT d'environ 25 000 € par an, arbitrée avec le DAF</dd>
+              <dt>Problème</dt><dd>Absentéisme en hausse, salariés qui se plaignent du dos, CSE qui demande des actions concrètes</dd>
+              <dt>Ce qu'elle veut</dt><dd>Une action qui se mesure et qu'elle peut présenter en comité de direction</dd>
+              <dt>Freins</dt><dd>Peur d'un avantage peu utilisé, charge d'organisation</dd>
+              <dt>S'informe sur</dt><dd>LinkedIn, newsletters RH (Culture RH, Parlons RH), salons RH, réseau ANDRH</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="card persona">
+          <div class="avatar" style="background:var(--clay)">KB</div>
+          <div>
+            <h3 style="margin-bottom:2px">Karim, le Head of People qui organise</h3>
+            <p class="muted small" style="margin:0">Persona fictif</p>
+            <dl class="pkv">
+              <dt>Âge</dt><dd>33 ans</dd>
+              <dt>Métier</dt><dd>Head of People / office manager d'une startup SaaS de 60 salariés, Paris 11e</dd>
+              <dt>Budget</dt><dd>6 000 à 9 000 € par an pour les avantages bien-être</dd>
+              <dt>Problème</dt><dd>Recruter et garder des développeurs, créer du lien en mode hybride</dd>
+              <dt>Ce qu'il veut</dt><dd>Un rituel d'équipe qui fasse revenir au bureau, simple à lancer</dd>
+              <dt>Freins</dt><dd>Peu de place dans les locaux, salariés peu sportifs</dd>
+              <dt>S'informe sur</dt><dd>LinkedIn, Instagram, Welcome to the Jungle, communautés Slack RH, podcasts</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 MARCHE -->
+  <section class="section" id="marche">
+    <div class="wrap">
+      <span class="eyebrow">3 · Le marché</span>
+      <h2>Un marché du bien-être en entreprise en croissance, porté par le Pilates</h2>
+      <div class="grid g4" style="margin-top:24px">
+        <div class="card stat"><span class="num">80,8 Md$</span>marché mondial du bien-être en entreprise en 2026, 129,5 Md$ attendus en 2034.<a class="src src-link" href="https://www.imarcgroup.com/corporate-wellness-market" target="_blank" rel="noopener">IMARC Group</a></div>
+        <div class="card stat"><span class="num">+6,07 %</span>de croissance annuelle moyenne prévue (2026-2034). L'Europe est la 1re région, avec 39,5 % du marché.<a class="src src-link" href="https://www.imarcgroup.com/corporate-wellness-market" target="_blank" rel="noopener">IMARC Group</a></div>
+        <div class="card stat"><span class="num">78,9 %</span>du marché passe par des prestations sur site, dans les locaux de l'entreprise : notre format.<a class="src src-link" href="https://www.imarcgroup.com/corporate-wellness-market" target="_blank" rel="noopener">IMARC Group</a></div>
+        <div class="card stat"><span class="num">N°1</span>Le Pilates est l'activité la plus réservée au monde pour la 3e année de suite, +66 % en un an.<a class="src src-link" href="https://classpass.com/blog/classpass-releases-its-2025-look-back-report-revealing-the-global-fitness-and-wellness-trends-that-defined-the-year/" target="_blank" rel="noopener">ClassPass 2025</a></div>
+      </div>
+
+      <h3 style="margin-top:40px">Les tendances qui jouent pour nous</h3>
+      <div class="grid g3">
+        <div class="card"><strong>L'absentéisme bat des records.</strong><p class="muted small" style="margin:6px 0 0">5,1 % en 2024 selon WTW, en hausse continue depuis 2019. Les RH cherchent des actions de prévention.</p></div>
+        <div class="card"><strong>Un cadre social favorable.</strong><p class="muted small" style="margin:6px 0 0">Depuis le décret du 28 mai 2021, les cours collectifs de sport financés par l'employeur sont exonérés de cotisations jusqu'à 5 % du PMSS par salarié. <a href="https://formation.lefebvre-dalloz.fr/actualite/quelles-exonerations-pour-la-pratique-du-sport-en-entreprise" target="_blank" rel="noopener">Lefebvre Dalloz</a></p></div>
+        <div class="card"><strong>Le retour au bureau.</strong><p class="muted small" style="margin:6px 0 0">En mode hybride, les entreprises cherchent des rituels qui donnent envie de venir sur place. Une séance collective au bureau en est un.</p></div>
+      </div>
+
+      <h3 style="margin-top:40px">Taille du marché adressable <span class="est">Estimation</span></h3>
+      <div class="grid g3">
+        <div class="card"><span class="eyebrow">Marché total (France)</span><span class="stat"><span class="num">143 259</span></span>entreprises de 10 salariés ou plus : 137 393 PME hors microentreprises, 5 607 ETI et 259 grandes entreprises.
+          <a class="src-link" href="https://www.insee.fr/fr/statistiques/fichier/6666955/ENTFRA22-F2.pdf" target="_blank" rel="noopener">Insee, Les entreprises en France 2022</a></div>
+        <div class="card"><span class="eyebrow">Marché visé (Lyon + Paris)</span><span class="stat"><span class="num">≈ 148 M€</span></span>par an.
+          <div class="calc">143 259 × 25 % (part estimée de Paris, petite couronne et Lyon) = 35 815<br>× 50 % à dominante bureau (hypothèse) = 17 900 entreprises<br>× 8 280 € HT (formule Équipe sur 12 mois) ≈ 148 M€</div></div>
+        <div class="card"><span class="eyebrow">Objectif à 12 mois</span><span class="stat"><span class="num">30 clients</span></span>soit 0,17 % des entreprises visées.
+          <div class="calc">30 clients × 720 € HT de panier moyen × 12 = 259 200 € HT de revenu récurrent annuel</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 CONCURRENCE -->
+  <section class="section alt" id="concurrence">
+    <div class="wrap">
+      <span class="eyebrow">4 · La concurrence</span>
+      <h2>Ce qui existe, et ce qui nous distingue</h2>
+      <p class="lead">Ces entreprises existent réellement. Elles n'ont aucun lien avec Noyau. Les prix ont été relevés sur leurs sites le 10 novembre 2026.</p>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Acteur</th><th>Ce qu'il propose</th><th>Prix</th><th>Limite pour notre cible</th><th>Notre différence</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Decathlon Pro</strong><br><a class="src-link" href="https://www.decathlonpro.fr/entreprises/cours" target="_blank" rel="noopener">decathlonpro.fr</a></td><td>Cours collectifs multisports dans les locaux, réseau national de coachs</td><td>Moins de 4 € par collaborateur et par mois pour 100 salariés ; pack découverte à moins de 10 € par salarié pour 3 mois</td><td>Généraliste (plus de 45 cours), pas de suivi de la posture ni de mesure du résultat</td><td>100 % Pilates et posture, même coach chaque semaine, bilan chiffré à 3 mois</td></tr>
+            <tr><td><strong>EGYM Wellpass</strong> (ex-Gymlib)<br><a class="src-link" href="https://fr.egym-wellpass.com/fr-fr/entreprises" target="_blank" rel="noopener">egym-wellpass.com</a></td><td>Abonnement à un réseau de salles et studios, cofinancé par l'employeur</td><td>Sur devis (grille entreprise non publique)</td><td>Le salarié doit y aller seul, en dehors du travail : ce sont surtout les déjà sportifs qui l'utilisent</td><td>On vient dans les locaux, sur le temps de midi : on touche les sédentaires</td></tr>
+            <tr><td><strong>Urban Sports Club</strong><br><a class="src-link" href="https://urbansportsclub.com/fr/prices" target="_blank" rel="noopener">urbansportsclub.com</a></td><td>Abonnement multisport européen, offre entreprise avec remise salarié</td><td>Abonnements individuels de 39 € à 154 € TTC par mois (grille publique) ; offre entreprise sur devis</td><td>Abonnement individuel : pas de dynamique d'équipe et pas d'exonération URSSAF (réservée aux cours collectifs)</td><td>Format collectif, éligible à l'exonération de cotisations</td></tr>
+            <tr><td><strong>Coach indépendant</strong></td><td>Cours de yoga ou Pilates facturé à l'heure</td><td>60 à 120 € de l'heure <span class="est">Estimation</span> (relevé sur annonces de plateformes de coachs)</td><td>Pas de remplaçant si le coach est absent, pas de matériel, pas de reporting</td><td>Remplacement garanti, matériel fourni, bilan RH, facture unique</td></tr>
+            <tr class="us"><td><strong>Noyau</strong></td><td>Pilates de posture au bureau, 45 min, mesuré</td><td>390 à 1 290 € HT par mois, soit 80 à 98 € HT la séance</td><td>Couvre seulement Lyon et Paris au lancement</td><td>Le seul des cinq à promettre un résultat mesuré sur les douleurs</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 PRIX -->
+  <section class="section" id="prix">
+    <div class="wrap">
+      <span class="eyebrow">5 · Le prix</span>
+      <h2>Comment nous avons fixé 690 € HT par mois</h2>
+      <div class="grid g3" style="margin-top:24px">
+        <div class="card">
+          <h3>1. Les concurrents</h3>
+          <p>Un coach indépendant facture 60 à 120 € de l'heure, sans matériel ni suivi. Decathlon Pro est moins cher (moins de 4 € par salarié et par mois), mais généraliste. Nous nous plaçons <strong>au milieu de la fourchette des indépendants</strong> (80 à 98 € HT la séance), avec un service complet.</p>
+        </div>
+        <div class="card">
+          <h3>2. Nos coûts <span class="est">Estimation</span></h3>
+          <div class="calc" style="margin-top:0">Coach certifié (45 min + trajet) : 40 €<br>Kit matériel 600 € amorti sur 12 mois / 8 séances : 6 €<br>Outils, assurance, admin : 4 €<br><strong>Coût d'une séance ≈ 50 €</strong><br>Prix Équipe : 86,25 € HT<br><strong>Marge brute ≈ 42 %</strong></div>
+        </div>
+        <div class="card">
+          <h3>3. La valeur pour le client</h3>
+          <p>Pour 80 salariés, l'exonération URSSAF couvre jusqu'à 16 020 € par an. La formule Équipe coûte 8 280 € HT par an : elle reste <strong>bien en dessous du plafond</strong>. Par salarié, c'est 8,63 € par mois, moins qu'un abonnement de salle d'entrée de gamme.</p>
+        </div>
+      </div>
+      <div class="note" style="margin-top:20px"><strong>Pourquoi c'est cohérent avec le marché :</strong> nous sommes plus chers que l'offre multisport de masse (Decathlon Pro), au niveau d'un coach indépendant, et beaucoup moins chers que l'absentéisme qu'on cherche à réduire. Le prix par séance baisse quand le client s'engage plus (97,50 € → 86,25 € → 80,63 €), ce qui pousse vers la formule Équipe.</div>
+    </div>
+  </section>
+
+  <!-- 6 MODELE -->
+  <section class="section alt" id="modele">
+    <div class="wrap">
+      <span class="eyebrow">6 · Le modèle économique</span>
+      <h2>Un abonnement mensuel B2B, avec un objectif de 30 clients à 12 mois</h2>
+      <div class="grid g2" style="margin-top:24px">
+        <div class="card">
+          <h3>Comment Noyau gagne de l'argent</h3>
+          <ul>
+            <li><strong>Abonnements mensuels</strong> (environ 86 % du CA) : Essentiel, Équipe, Entreprise, engagement 3 mois.</li>
+            <li><strong>Événements</strong> (environ 14 % du CA) : Pause Pilates géante à 450 € HT, Pilates & brunch à 1 190 € HT, Semaine de la QVT à 2 490 € HT. Ils servent aussi de porte d'entrée : leur prix est déduit du premier mois si l'entreprise s'abonne dans les 30 jours.</li>
+            <li><strong>Coûts variables</strong> : coachs indépendants payés à la séance, donc pas de salaire fixe tant qu'un client n'a pas signé.</li>
+            <li><strong>Coûts fixes</strong> <span class="est">Estimation</span> : 6 000 € par mois (rémunération des 2 fondateurs, outils, assurance, marketing).</li>
+          </ul>
+          <div class="calc">Point mort : 6 000 € ÷ 42 % de marge = 14 300 € de CA mensuel<br>÷ 720 € de panier moyen = <strong>20 clients actifs</strong></div>
+        </div>
+        <div class="card">
+          <h3>Ce qu'il faut vendre pour atteindre l'objectif <span class="est">Estimation</span></h3>
+          <p><strong>Objectif à fin novembre 2027 : 30 clients actifs, 21 600 € HT de CA mensuel, soit 259 200 € HT par an.</strong></p>
+          <div class="funnel">
+            <div style="background:#3C6E91;width:100%"><span>Prospects entrants</span><span>300</span></div>
+            <div style="background:#C08A1E;width:85%"><span>Appels de découverte (40 %)</span><span>120</span></div>
+            <div style="background:#D9734E;width:70%"><span>Séances d'essai (50 %)</span><span>60</span></div>
+            <div style="background:#2F7D5B;width:55%"><span>Clients signés (50 %)</span><span>30</span></div>
+          </div>
+          <p class="small muted" style="margin-top:12px">Soit 25 prospects par mois, environ 6 par semaine. Les taux de conversion sont des hypothèses, suivies chaque semaine dans le <a href="crm.html">CRM</a> et corrigées après 3 mois.</p>
+        </div>
+      </div>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>Trimestre</th><th>Clients actifs (fin)</th><th>CA mensuel HT (fin)</th><th>CA du trimestre HT</th><th>Jalon</th></tr></thead>
+          <tbody>
+            <tr><td>T1 · déc. 2026 à fév. 2027</td><td>8</td><td>5 760 €</td><td>≈ 13 000 €</td><td>Premiers clients du réseau et des partenaires</td></tr>
+            <tr><td>T2 · mars à mai 2027</td><td>15</td><td>10 800 €</td><td>≈ 26 000 €</td><td>Recrutement de 3 coachs à Paris</td></tr>
+            <tr><td>T3 · juin à août 2027</td><td>21</td><td>15 120 €</td><td>≈ 39 000 €</td><td>Point mort atteint</td></tr>
+            <tr><td>T4 · sept. à nov. 2027</td><td>30</td><td>21 600 €</td><td>≈ 55 000 €</td><td>Objectif atteint, budget 2028 des clients</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted">CA des abonnements sur 12 mois ≈ 133 000 € HT <span class="est">Estimation</span> : somme des CA trimestriels, avec une montée progressive des clients au fil des mois.</p>
+      <div class="calc">Événements : 2 par mois × 900 € HT de prix moyen × 12 mois ≈ 21 600 € HT <span class="est">Estimation</span><br>
+        CA total sur 12 mois ≈ 133 000 € + 21 600 € = <strong>≈ 154 600 € HT</strong> (dont environ 86 % d'abonnements et 14 % d'événements)</div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="section" id="sources">
+    <div class="wrap">
+      <span class="eyebrow">Sources</span>
+      <h2>Toutes les sources citées</h2>
+      <p class="muted">Liens ouverts et vérifiés le 10 novembre 2026.</p>
+      <ol class="sources">
+        <li>Anses, « Manque d'activité physique et excès de sédentarité : une priorité de santé publique », 2022 · <a href="https://www.anses.fr/fr/content/manque-dactivite-physique-et-exces-de-sedentarite-une-priorite-de-sante-publique" target="_blank" rel="noopener">anses.fr</a></li>
+        <li>INRS, statistiques sur les troubles musculosquelettiques · <a href="https://www.inrs.fr/accueil/risques/tms-troubles-musculosquelettiques/statistiques.html" target="_blank" rel="noopener">inrs.fr</a></li>
+        <li>Baromètre de l'absentéisme WTW 2025, repris par les Éditions Tissot · <a href="https://www.editions-tissot.fr/actualite/sante-securite/absenteisme-au-travail-ce-quil-faut-retenir-du-barometre-de-wtw" target="_blank" rel="noopener">editions-tissot.fr</a></li>
+        <li>MEDEF, CNOSF, AG2R La Mondiale, étude sur l'impact économique de l'activité physique en entreprise, 2015 · <a href="https://www.medef.com/communiques-de-presse-download/le-medef-le-cnosf-et-ag2r-la-mondiale-devoilent-la-premiere-etude-sur-l-impact-economique-de-l-activite-physique-et-sportive-sur-l-entreprise-le-salarie-et-la-societe" target="_blank" rel="noopener">medef.com</a></li>
+        <li>IMARC Group, Corporate Wellness Market Report 2026-2034 · <a href="https://www.imarcgroup.com/corporate-wellness-market" target="_blank" rel="noopener">imarcgroup.com</a></li>
+        <li>ClassPass, 2025 Look Back Report · <a href="https://classpass.com/blog/classpass-releases-its-2025-look-back-report-revealing-the-global-fitness-and-wellness-trends-that-defined-the-year/" target="_blank" rel="noopener">classpass.com</a></li>
+        <li>Insee, Les entreprises en France, édition 2022, fiche 1.2 (catégories d'entreprises) · <a href="https://www.insee.fr/fr/statistiques/fichier/6666955/ENTFRA22-F2.pdf" target="_blank" rel="noopener">insee.fr</a></li>
+        <li>Lefebvre Dalloz, « Quelles exonérations pour la pratique du sport en entreprise ? » · <a href="https://formation.lefebvre-dalloz.fr/actualite/quelles-exonerations-pour-la-pratique-du-sport-en-entreprise" target="_blank" rel="noopener">lefebvre-dalloz.fr</a></li>
+        <li>Urssaf, plafonds de la Sécurité sociale 2026 · <a href="https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/plafonds-securite-sociale.html" target="_blank" rel="noopener">urssaf.fr</a></li>
+        <li>Decathlon Pro, cours collectifs en entreprise · <a href="https://www.decathlonpro.fr/entreprises/cours" target="_blank" rel="noopener">decathlonpro.fr</a></li>
+        <li>EGYM Wellpass, offre entreprises · <a href="https://fr.egym-wellpass.com/fr-fr/entreprises" target="_blank" rel="noopener">egym-wellpass.com</a></li>
+        <li>Urban Sports Club, grille des abonnements · <a href="https://urbansportsclub.com/fr/prices" target="_blank" rel="noopener">urbansportsclub.com</a></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/site.js?v=3"></script>
+</body>
+</html>
