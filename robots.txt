@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noyau-pilates.vercel.app/sitemap.xml

@@ -4,10 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CRM interne · Noyau</title>
+<meta name="description" content="CRM interne de Noyau : 22 contacts fictifs, fiches, pipeline par étapes et tableau de bord (chiffre d&#x27;affaires, clients, taux de conversion). Projet étudiant INSEEC, démo.">
+<link rel="canonical" href="https://noyau-pilates.vercel.app/crm">
+<meta property="og:title" content="CRM interne · Noyau">
+<meta property="og:description" content="CRM interne de Noyau : 22 contacts fictifs, fiches, pipeline par étapes et tableau de bord (chiffre d&#x27;affaires, clients, taux de conversion). Projet étudiant INSEEC, démo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://noyau-pilates.vercel.app/crm">
+<meta property="og:locale" content="fr_FR">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 <style>
   .crm-top{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;padding:36px 0 18px}
   .tabs{display:flex;gap:6px;background:var(--sand-2);padding:5px;border-radius:999px;width:max-content;max-width:100%;overflow-x:auto}
@@ -50,7 +57,23 @@
 </head>
 <body data-page="crm">
 <div class="demo-banner"><strong>Projet étudiant INSEEC, démo sans vente réelle</strong> · aucun paiement, données fictives</div>
-<header id="site-header"></header>
+<header id="site-header" class="site-header side">
+      <a class="brand" href="index.html" aria-label="Noyau, accueil">
+        <img src="assets/logo-light.svg" alt="" width="38" height="38">
+        <span>Noyau<small>Pilates en entreprise</small></span>
+      </a>
+      <nav class="side-nav" aria-label="Les 4 espaces">
+        <span class="side-label">Les 4 espaces</span>
+        <a href="index.html"><span class="n">01</span><span class="t">Offre<small>Ce que voit le client</small></span></a>
+        <a href="crm.html" class="active" aria-current="page"><span class="n">02</span><span class="t">CRM<small>Suivi des prospects</small></span></a>
+        <a href="strategie.html"><span class="n">03</span><span class="t">Stratégie<small>Pourquoi ce produit</small></span></a>
+        <a href="communication.html"><span class="n">04</span><span class="t">Communication<small>Comment le vendre</small></span></a>
+      </nav>
+      <div class="side-foot">
+        <a href="commander.html" class="btn btn-primary">Réserver</a>
+        <p>Lyon · Paris<br>Séances de 45 min dans vos locaux<br><a href="conformite.html" style="color:#FFC9B3">Checklist de l'épreuve</a></p>
+      </div>
+    </header>
 
 <main class="wrap" style="padding-bottom:60px">
   <div class="crm-top">
@@ -67,16 +90,16 @@
   </div>
 
   <section id="tab-dash">
-    <div class="kpis" id="kpis"></div>
+    <div class="kpis" id="kpis"><div class="kpi"><div class="l">Chiffre d'affaires mensuel</div><div class="v">3 450 € HT</div><div class="h">soit 41 400 € HT sur 12 mois</div></div><div class="kpi"><div class="l">Clients actifs</div><div class="v">5</div><div class="h">22 contacts au total</div></div><div class="kpi"><div class="l">Taux de conversion</div><div class="v">22,7 %</div><div class="h">clients / contacts · closing 62 % (gagnés / clôturés)</div></div><div class="kpi"><div class="l">Pipeline en proposition</div><div class="v">3 060 € HT</div><div class="h">4 devis en attente, par mois</div></div></div>
     <div class="grid g2" style="margin-top:16px">
-      <div class="card"><h3>Contacts par source</h3><div class="bars" id="by-source"></div></div>
-      <div class="card"><h3>Prochaines actions</h3><div id="todo"></div></div>
+      <div class="card"><h3>Contacts par source</h3><div class="bars" id="by-source"><div class="b"><span>LinkedIn</span><div class="t"><div class="f" style="width:100%"></div></div><strong>5</strong></div><div class="b"><span>Salon</span><div class="t"><div class="f" style="width:80%"></div></div><strong>4</strong></div><div class="b"><span>Partenaire</span><div class="t"><div class="f" style="width:80%"></div></div><strong>4</strong></div><div class="b"><span>Instagram</span><div class="t"><div class="f" style="width:80%"></div></div><strong>4</strong></div><div class="b"><span>Site web</span><div class="t"><div class="f" style="width:60%"></div></div><strong>3</strong></div><div class="b"><span>Recommandation</span><div class="t"><div class="f" style="width:40%"></div></div><strong>2</strong></div></div></div>
+      <div class="card"><h3>Prochaines actions</h3><div id="todo"><div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer" data-open="6"><span><strong>Relance téléphonique sur le devis</strong><br><span class="muted">Antoine Rey · Datavéa</span></span><span class="muted" style="white-space:nowrap">12 nov. 2026</span></div><div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer" data-open="10"><span><strong>Appel de découverte</strong><br><span class="muted">Hugo Martins · Opalia Santé</span></span><span class="muted" style="white-space:nowrap">12 nov. 2026</span></div><div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer" data-open="15"><span><strong>Premier message LinkedIn personnalisé</strong><br><span class="muted">Pauline Garnier · Mercure Assurances</span></span><span class="muted" style="white-space:nowrap">12 nov. 2026</span></div><div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer" data-open="16"><span><strong>Rappeler sous 24 h</strong><br><span class="muted">Romain Blanc · Cobalt Studio</span></span><span class="muted" style="white-space:nowrap">12 nov. 2026</span></div><div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer" data-open="18"><span><strong>Appel de découverte</strong><br><span class="muted">Mathis Roux · Brickly</span></span><span class="muted" style="white-space:nowrap">12 nov. 2026</span></div><div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;cursor:pointer" data-open="7"><span><strong>Envoyer 2 créneaux pour la séance d&#x27;essai</strong><br><span class="muted">Mélanie Brun · Nexo Légal</span></span><span class="muted" style="white-space:nowrap">13 nov. 2026</span></div></div></div>
     </div>
   </section>
 
   <section id="tab-pipe" hidden>
     <p class="muted small">Faites glisser une carte d'une colonne à l'autre, ou utilisez le bouton « Étape suivante ». Cliquez sur un nom pour ouvrir la fiche.</p>
-    <div class="board" id="board"></div>
+    <div class="board" id="board"><div class="col" data-stage="nouveau"><h4><span>Nouveau</span><span>5</span></h4><div class="deal" draggable="true" data-id="15"><strong data-open="15" style="cursor:pointer">Mercure Assurances</strong><div class="meta">Pauline Garnier · Entreprise · 1 290 €/mois</div><div class="acts"><span class="chip">LinkedIn</span><button data-adv="15">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="16"><strong data-open="16" style="cursor:pointer">Cobalt Studio</strong><div class="meta">Romain Blanc · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Site web</span><button data-adv="16">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="17"><strong data-open="17" style="cursor:pointer">Alto Énergie</strong><div class="meta">Léa Fontaine · Équipe · 690 €/mois</div><div class="acts"><span class="chip">Salon</span><button data-adv="17">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="18"><strong data-open="18" style="cursor:pointer">Brickly</strong><div class="meta">Mathis Roux · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Recommandation</span><button data-adv="18">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="19"><strong data-open="19" style="cursor:pointer">Quadra Audit</strong><div class="meta">Chloé Mercier · Équipe · 690 €/mois</div><div class="acts"><span class="chip">Partenaire</span><button data-adv="19">Étape suivante →</button></div></div></div><div class="col" data-stage="contacte"><h4><span>Contacté</span><span>5</span></h4><div class="deal" draggable="true" data-id="10"><strong data-open="10" style="cursor:pointer">Opalia Santé</strong><div class="meta">Hugo Martins · Équipe · 690 €/mois</div><div class="acts"><span class="chip">LinkedIn</span><button data-adv="10">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="11"><strong data-open="11" style="cursor:pointer">Studio Hublot</strong><div class="meta">Camille Robin · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Instagram</span><button data-adv="11">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="12"><strong data-open="12" style="cursor:pointer">Trajecto</strong><div class="meta">Nicolas Dumas · Équipe · 690 €/mois</div><div class="acts"><span class="chip">Site web</span><button data-adv="12">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="13"><strong data-open="13" style="cursor:pointer">Hoplà</strong><div class="meta">Emma Lefèvre · Équipe · 690 €/mois</div><div class="acts"><span class="chip">Partenaire</span><button data-adv="13">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="14"><strong data-open="14" style="cursor:pointer">Ondine Bio</strong><div class="meta">Yanis Cherif · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Instagram</span><button data-adv="14">Étape suivante →</button></div></div></div><div class="col" data-stage="proposition"><h4><span>Proposition envoyée</span><span>4</span></h4><div class="deal" draggable="true" data-id="6"><strong data-open="6" style="cursor:pointer">Datavéa</strong><div class="meta">Antoine Rey · Équipe · 690 €/mois</div><div class="acts"><span class="chip">LinkedIn</span><button data-adv="6">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="7"><strong data-open="7" style="cursor:pointer">Nexo Légal</strong><div class="meta">Mélanie Brun · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Site web</span><button data-adv="7">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="8"><strong data-open="8" style="cursor:pointer">Fluxo</strong><div class="meta">Karim Benali · Équipe · 690 €/mois</div><div class="acts"><span class="chip">Salon</span><button data-adv="8">Étape suivante →</button></div></div><div class="deal" draggable="true" data-id="9"><strong data-open="9" style="cursor:pointer">Verso Industrie</strong><div class="meta">Lucie Perrin · Entreprise · 1 290 €/mois</div><div class="acts"><span class="chip">Partenaire</span><button data-adv="9">Étape suivante →</button></div></div></div><div class="col" data-stage="gagne"><h4><span>Gagné</span><span>5</span></h4><div class="deal" draggable="true" data-id="1"><strong data-open="1" style="cursor:pointer">Atelier Lumen</strong><div class="meta">Claire Morel · Équipe · 690 €/mois</div><div class="acts"><span class="chip">LinkedIn</span></div></div><div class="deal" draggable="true" data-id="2"><strong data-open="2" style="cursor:pointer">Pixel &amp; Fils</strong><div class="meta">Thomas Girard · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Salon</span></div></div><div class="deal" draggable="true" data-id="3"><strong data-open="3" style="cursor:pointer">Kalibre</strong><div class="meta">Inès Haddad · Équipe · 690 €/mois</div><div class="acts"><span class="chip">Recommandation</span></div></div><div class="deal" draggable="true" data-id="4"><strong data-open="4" style="cursor:pointer">Groupe Orvel</strong><div class="meta">Julien Faure · Entreprise · 1 290 €/mois</div><div class="acts"><span class="chip">Partenaire</span></div></div><div class="deal" draggable="true" data-id="5"><strong data-open="5" style="cursor:pointer">Bleu Carré</strong><div class="meta">Sarah Lemaire · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Instagram</span></div></div></div><div class="col" data-stage="perdu"><h4><span>Perdu</span><span>3</span></h4><div class="deal" draggable="true" data-id="20"><strong data-open="20" style="cursor:pointer">Lumio</strong><div class="meta">Bastien Noël · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Instagram</span></div></div><div class="deal" draggable="true" data-id="21"><strong data-open="21" style="cursor:pointer">Helix Pharma</strong><div class="meta">Sophie Caron · Entreprise · 1 290 €/mois</div><div class="acts"><span class="chip">LinkedIn</span></div></div><div class="deal" draggable="true" data-id="22"><strong data-open="22" style="cursor:pointer">Tandem RH</strong><div class="meta">Adrien Petit · Essentiel · 390 €/mois</div><div class="acts"><span class="chip">Salon</span></div></div></div></div>
   </section>
 
   <section id="tab-list" hidden>
@@ -88,18 +111,152 @@
     <div class="table-wrap">
       <table>
         <thead><tr><th>Contact</th><th>Entreprise</th><th>Source</th><th>Étape</th><th>Offre</th><th>Prochaine action</th></tr></thead>
-        <tbody id="rows"></tbody>
+        <tbody id="rows"><tr data-open="1">
+      <td><strong>Claire Morel</strong><br><span class="muted small">DRH</span></td>
+      <td>Atelier Lumen<br><span class="muted small">Lyon 2e · 72 sal.</span></td>
+      <td><span class="chip">LinkedIn</span></td><td><span class="stage st-gagne">Gagné</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span></td>
+      <td class="small">Point participation après 3 semaines<br><span class="muted">24 nov. 2026</span><br><span class="muted">claire.morel@atelierlumen.example · 06 00 00 11 42</span></td></tr><tr data-open="2">
+      <td><strong>Thomas Girard</strong><br><span class="muted small">Office manager</span></td>
+      <td>Pixel &amp; Fils<br><span class="muted small">Villeurbanne · 48 sal.</span></td>
+      <td><span class="chip">Salon</span></td><td><span class="stage st-gagne">Gagné</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Envoyer le kit de communication interne<br><span class="muted">18 nov. 2026</span><br><span class="muted">thomas.girard@pixelfils.example · 06 00 00 12 44</span></td></tr><tr data-open="3">
+      <td><strong>Inès Haddad</strong><br><span class="muted small">Head of People</span></td>
+      <td>Kalibre<br><span class="muted small">Paris 10e · 140 sal.</span></td>
+      <td><span class="chip">Recommandation</span></td><td><span class="stage st-gagne">Gagné</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span></td>
+      <td class="small">Préparer le questionnaire posture à 6 semaines<br><span class="muted">01 déc. 2026</span><br><span class="muted">ines.haddad@kalibre.example · 06 00 00 13 46</span></td></tr><tr data-open="4">
+      <td><strong>Julien Faure</strong><br><span class="muted small">DRH</span></td>
+      <td>Groupe Orvel<br><span class="muted small">Lyon 6e · 210 sal.</span></td>
+      <td><span class="chip">Partenaire</span></td><td><span class="stage st-gagne">Gagné</span></td>
+      <td>Entreprise<br><span class="muted small">1 290 € HT/mois</span></td>
+      <td class="small">Présentation du programme au CSE<br><span class="muted">20 nov. 2026</span><br><span class="muted">julien.faure@groupeorvel.example · 06 00 00 14 48</span></td></tr><tr data-open="5">
+      <td><strong>Sarah Lemaire</strong><br><span class="muted small">Responsable RH</span></td>
+      <td>Bleu Carré<br><span class="muted small">Paris 3e · 55 sal.</span></td>
+      <td><span class="chip">Instagram</span></td><td><span class="stage st-gagne">Gagné</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Proposer le passage en formule Équipe<br><span class="muted">26 nov. 2026</span><br><span class="muted">sarah.lemaire@bleucarre.example · 06 00 00 15 50</span></td></tr><tr data-open="6">
+      <td><strong>Antoine Rey</strong><br><span class="muted small">CEO</span></td>
+      <td>Datavéa<br><span class="muted small">Lyon 7e · 95 sal.</span></td>
+      <td><span class="chip">LinkedIn</span></td><td><span class="stage st-proposition">Proposition envoyée</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span></td>
+      <td class="small">Relance téléphonique sur le devis<br><span class="muted">12 nov. 2026</span><br><span class="muted">antoine.rey@datavea.example · 06 00 00 16 52</span></td></tr><tr data-open="7">
+      <td><strong>Mélanie Brun</strong><br><span class="muted small">Office manager</span></td>
+      <td>Nexo Légal<br><span class="muted small">Paris 8e · 65 sal.</span></td>
+      <td><span class="chip">Site web</span></td><td><span class="stage st-proposition">Proposition envoyée</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Envoyer 2 créneaux pour la séance d&#x27;essai<br><span class="muted">13 nov. 2026</span><br><span class="muted">melanie.brun@nexolegal.example · 06 00 00 17 54</span></td></tr><tr data-open="8">
+      <td><strong>Karim Benali</strong><br><span class="muted small">Head of People</span></td>
+      <td>Fluxo<br><span class="muted small">Paris 11e · 60 sal.</span></td>
+      <td><span class="chip">Salon</span></td><td><span class="stage st-proposition">Proposition envoyée</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span></td>
+      <td class="small">Répondre à la question sur l&#x27;exonération URSSAF<br><span class="muted">14 nov. 2026</span><br><span class="muted">karim.benali@fluxo.example · 06 00 00 18 56</span></td></tr><tr data-open="9">
+      <td><strong>Lucie Perrin</strong><br><span class="muted small">DRH</span></td>
+      <td>Verso Industrie<br><span class="muted small">Vénissieux · 180 sal.</span></td>
+      <td><span class="chip">Partenaire</span></td><td><span class="stage st-proposition">Proposition envoyée</span></td>
+      <td>Entreprise<br><span class="muted small">1 290 € HT/mois</span></td>
+      <td class="small">Rendez-vous avec le directeur de site<br><span class="muted">19 nov. 2026</span><br><span class="muted">lucie.perrin@versoindustrie.example · 06 00 00 19 58</span></td></tr><tr data-open="10">
+      <td><strong>Hugo Martins</strong><br><span class="muted small">Responsable QVT</span></td>
+      <td>Opalia Santé<br><span class="muted small">Lyon 3e · 120 sal.</span></td>
+      <td><span class="chip">LinkedIn</span></td><td><span class="stage st-contacte">Contacté</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span></td>
+      <td class="small">Appel de découverte<br><span class="muted">12 nov. 2026</span><br><span class="muted">hugo.martins@opaliasante.example · 06 00 00 20 60</span></td></tr><tr data-open="11">
+      <td><strong>Camille Robin</strong><br><span class="muted small">Office manager</span></td>
+      <td>Studio Hublot<br><span class="muted small">Lyon 1er · 28 sal.</span></td>
+      <td><span class="chip">Instagram</span></td><td><span class="stage st-contacte">Contacté</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Rappeler en fin de matinée<br><span class="muted">13 nov. 2026</span><br><span class="muted">camille.robin@studiohublot.example · 06 00 00 21 62</span></td></tr><tr data-open="12">
+      <td><strong>Nicolas Dumas</strong><br><span class="muted small">COO</span></td>
+      <td>Trajecto<br><span class="muted small">Saint-Priest · 150 sal.</span></td>
+      <td><span class="chip">Site web</span></td><td><span class="stage st-contacte">Contacté</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span></td>
+      <td class="small">Proposer une séance d&#x27;essai<br><span class="muted">15 nov. 2026</span><br><span class="muted">nicolas.dumas@trajecto.example · 06 00 00 22 64</span></td></tr><tr data-open="13">
+      <td><strong>Emma Lefèvre</strong><br><span class="muted small">Talent manager</span></td>
+      <td>Hoplà<br><span class="muted small">Paris 2e · 85 sal.</span></td>
+      <td><span class="chip">Partenaire</span></td><td><span class="stage st-contacte">Contacté</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span><br><span class="chip" style="margin-top:4px">Événement</span></td>
+      <td class="small">Appel de découverte<br><span class="muted">17 nov. 2026</span><br><span class="muted">emma.lefevre@hopla.example · 06 00 00 23 66</span></td></tr><tr data-open="14">
+      <td><strong>Yanis Cherif</strong><br><span class="muted small">Fondateur</span></td>
+      <td>Ondine Bio<br><span class="muted small">Lyon 9e · 35 sal.</span></td>
+      <td><span class="chip">Instagram</span></td><td><span class="stage st-contacte">Contacté</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Envoyer le devis Essentiel<br><span class="muted">16 nov. 2026</span><br><span class="muted">yanis.cherif@ondinebio.example · 06 00 00 24 68</span></td></tr><tr data-open="15">
+      <td><strong>Pauline Garnier</strong><br><span class="muted small">DRH</span></td>
+      <td>Mercure Assurances<br><span class="muted small">Paris 9e · 230 sal.</span></td>
+      <td><span class="chip">LinkedIn</span></td><td><span class="stage st-nouveau">Nouveau</span></td>
+      <td>Entreprise<br><span class="muted small">1 290 € HT/mois</span></td>
+      <td class="small">Premier message LinkedIn personnalisé<br><span class="muted">12 nov. 2026</span><br><span class="muted">pauline.garnier@mercureassurances.example · 06 00 00 25 70</span></td></tr><tr data-open="16">
+      <td><strong>Romain Blanc</strong><br><span class="muted small">Office manager</span></td>
+      <td>Cobalt Studio<br><span class="muted small">Paris 20e · 22 sal.</span></td>
+      <td><span class="chip">Site web</span></td><td><span class="stage st-nouveau">Nouveau</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Rappeler sous 24 h<br><span class="muted">12 nov. 2026</span><br><span class="muted">romain.blanc@cobaltstudio.example · 06 00 00 26 72</span></td></tr><tr data-open="17">
+      <td><strong>Léa Fontaine</strong><br><span class="muted small">Responsable RH</span></td>
+      <td>Alto Énergie<br><span class="muted small">Lyon 3e · 110 sal.</span></td>
+      <td><span class="chip">Salon</span></td><td><span class="stage st-nouveau">Nouveau</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span><br><span class="chip" style="margin-top:4px">Événement</span></td>
+      <td class="small">Envoyer le devis Semaine de la QVT<br><span class="muted">13 nov. 2026</span><br><span class="muted">lea.fontaine@altoenergie.example · 06 00 00 27 74</span></td></tr><tr data-open="18">
+      <td><strong>Mathis Roux</strong><br><span class="muted small">CEO</span></td>
+      <td>Brickly<br><span class="muted small">Paris 10e · 40 sal.</span></td>
+      <td><span class="chip">Recommandation</span></td><td><span class="stage st-nouveau">Nouveau</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Appel de découverte<br><span class="muted">12 nov. 2026</span><br><span class="muted">mathis.roux@brickly.example · 06 00 00 28 76</span></td></tr><tr data-open="19">
+      <td><strong>Chloé Mercier</strong><br><span class="muted small">People partner</span></td>
+      <td>Quadra Audit<br><span class="muted small">Lyon 2e · 160 sal.</span></td>
+      <td><span class="chip">Partenaire</span></td><td><span class="stage st-nouveau">Nouveau</span></td>
+      <td>Équipe<br><span class="muted small">690 € HT/mois</span></td>
+      <td class="small">Qualifier le besoin<br><span class="muted">14 nov. 2026</span><br><span class="muted">chloe.mercier@quadraaudit.example · 06 00 00 29 78</span></td></tr><tr data-open="20">
+      <td><strong>Bastien Noël</strong><br><span class="muted small">Office manager</span></td>
+      <td>Lumio<br><span class="muted small">Villeurbanne · 50 sal.</span></td>
+      <td><span class="chip">Instagram</span></td><td><span class="stage st-perdu">Perdu</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Recontacter au renouvellement<br><span class="muted">01 mars 2027</span><br><span class="muted">bastien.noel@lumio.example · 06 00 00 30 80</span></td></tr><tr data-open="21">
+      <td><strong>Sophie Caron</strong><br><span class="muted small">DRH</span></td>
+      <td>Helix Pharma<br><span class="muted small">Lyon 7e · 260 sal.</span></td>
+      <td><span class="chip">LinkedIn</span></td><td><span class="stage st-perdu">Perdu</span></td>
+      <td>Entreprise<br><span class="muted small">1 290 € HT/mois</span></td>
+      <td class="small">Relancer pour le budget 2027<br><span class="muted">10 janv. 2027</span><br><span class="muted">sophie.caron@helixpharma.example · 06 00 00 31 82</span></td></tr><tr data-open="22">
+      <td><strong>Adrien Petit</strong><br><span class="muted small">COO</span></td>
+      <td>Tandem RH<br><span class="muted small">Paris 17e · 30 sal.</span></td>
+      <td><span class="chip">Salon</span></td><td><span class="stage st-perdu">Perdu</span></td>
+      <td>Essentiel<br><span class="muted small">390 € HT/mois</span></td>
+      <td class="small">Recontacter après le déménagement<br><span class="muted">01 févr. 2027</span><br><span class="muted">adrien.petit@tandemrh.example · 06 00 00 32 84</span></td></tr></tbody>
       </table>
     </div>
-    <p class="small muted" id="count"></p>
+    <p class="small muted" id="count">22 contact(s) affiché(s)</p>
   </section>
 </main>
 
 <div class="modal-bg" id="modal" aria-hidden="true"><aside class="drawer" role="dialog" aria-modal="true" id="drawer"></aside></div>
 
-<footer id="site-footer"></footer>
-<script src="assets/site.js?v=3"></script>
-<script src="assets/store.js?v=3"></script>
+<footer id="site-footer" class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <div class="brand" style="color:#fff"><img src="assets/logo-light.svg" alt="" width="30" height="30"> Noyau</div>
+            <p style="margin-top:12px;max-width:420px">Le studio de Pilates qui vient au bureau. Séances de 45 minutes dans vos locaux, à Lyon et Paris, pour des équipes qui passent leurs journées assises.</p>
+          </div>
+          <div>
+            <strong style="color:#fff">Les 4 espaces</strong><br>
+            <a href="index.html">Offre &amp; achat</a><br>
+            <a href="crm.html">CRM interne</a><br>
+            <a href="strategie.html">Dossier stratégique</a><br>
+            <a href="communication.html">Plan de communication</a><br>
+            <a href="conformite.html">Checklist de l'épreuve</a>
+          </div>
+          <div>
+            <strong style="color:#fff">Contact (démo)</strong><br>
+            bonjour@noyau-demo.fr<br>
+            04 00 00 00 00<br>
+            Lyon 2e · Paris 11e
+          </div>
+        </div>
+        <div class="legal">Projet étudiant INSEEC, démo sans vente réelle. Aucun paiement n'est encaissé, toutes les coordonnées, entreprises clientes et témoignages présents sur ce site sont fictifs. Les marques citées (concurrents, partenaires visés) n'ont aucun lien avec ce projet. Photos : Unsplash (licence libre), personnes non liées à Noyau.</div>
+      </div>
+    </footer>
+<script src="assets/site.js?v=4"></script>
+<script src="assets/store.js?v=4"></script>
 <script>
   const S = NoyauStore, STAGES = S.STAGES, SN = Object.fromEntries(STAGES);
   const eur = n => n.toLocaleString('fr-FR') + ' €';

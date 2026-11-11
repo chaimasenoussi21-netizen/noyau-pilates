@@ -24,7 +24,9 @@ window.NOYAU_OFFERS = {
     ["communication.html", "Communication", "communication", "Comment le vendre"]
   ];
   const header = document.getElementById("site-header");
-  if (header) {
+  // Le menu et le pied de page sont écrits directement dans le HTML (lisibles sans JavaScript).
+  // Ce code ne sert que de secours si une page les a laissés vides.
+  if (header && !header.children.length) {
     header.className = "site-header side";
     header.innerHTML = `
       <a class="brand" href="index.html" aria-label="Noyau, accueil">
@@ -41,6 +43,8 @@ window.NOYAU_OFFERS = {
         <a href="commander.html" class="btn btn-primary">Réserver</a>
         <p>Lyon · Paris<br>Séances de 45 min dans vos locaux</p>
       </div>`;
+  }
+  if (header) {
     const tab = document.createElement("nav");
     tab.className = "tabbar";
     tab.setAttribute("aria-label", "Navigation mobile");
@@ -49,7 +53,7 @@ window.NOYAU_OFFERS = {
     document.body.appendChild(tab);
   }
   const footer = document.getElementById("site-footer");
-  if (footer) {
+  if (footer && !footer.children.length) {
     footer.className = "site-footer";
     footer.innerHTML = `
       <div class="wrap">

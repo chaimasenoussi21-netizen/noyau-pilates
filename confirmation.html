@@ -4,14 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Réservation confirmée · Noyau</title>
+<meta name="description" content="Confirmation de réservation Noyau (démo, aucun paiement réel). Projet étudiant INSEEC.">
+<link rel="canonical" href="https://noyau-pilates.vercel.app/confirmation">
+<meta property="og:title" content="Réservation confirmée · Noyau">
+<meta property="og:description" content="Confirmation de réservation Noyau (démo, aucun paiement réel). Projet étudiant INSEEC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://noyau-pilates.vercel.app/confirmation">
+<meta property="og:locale" content="fr_FR">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body data-page="vente">
 <div class="demo-banner"><strong>Projet étudiant INSEEC, démo sans vente réelle</strong> · aucun paiement, données fictives</div>
-<header id="site-header"></header>
+<header id="site-header" class="site-header side">
+      <a class="brand" href="index.html" aria-label="Noyau, accueil">
+        <img src="assets/logo-light.svg" alt="" width="38" height="38">
+        <span>Noyau<small>Pilates en entreprise</small></span>
+      </a>
+      <nav class="side-nav" aria-label="Les 4 espaces">
+        <span class="side-label">Les 4 espaces</span>
+        <a href="index.html" class="active" aria-current="page"><span class="n">01</span><span class="t">Offre<small>Ce que voit le client</small></span></a>
+        <a href="crm.html"><span class="n">02</span><span class="t">CRM<small>Suivi des prospects</small></span></a>
+        <a href="strategie.html"><span class="n">03</span><span class="t">Stratégie<small>Pourquoi ce produit</small></span></a>
+        <a href="communication.html"><span class="n">04</span><span class="t">Communication<small>Comment le vendre</small></span></a>
+      </nav>
+      <div class="side-foot">
+        <a href="commander.html" class="btn btn-primary">Réserver</a>
+        <p>Lyon · Paris<br>Séances de 45 min dans vos locaux<br><a href="conformite.html" style="color:#FFC9B3">Checklist de l'épreuve</a></p>
+      </div>
+    </header>
 
 <main class="section">
   <div class="wrap" style="max-width:760px">
@@ -39,8 +62,32 @@
   </div>
 </main>
 
-<footer id="site-footer"></footer>
-<script src="assets/site.js?v=3"></script>
+<footer id="site-footer" class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <div class="brand" style="color:#fff"><img src="assets/logo-light.svg" alt="" width="30" height="30"> Noyau</div>
+            <p style="margin-top:12px;max-width:420px">Le studio de Pilates qui vient au bureau. Séances de 45 minutes dans vos locaux, à Lyon et Paris, pour des équipes qui passent leurs journées assises.</p>
+          </div>
+          <div>
+            <strong style="color:#fff">Les 4 espaces</strong><br>
+            <a href="index.html">Offre &amp; achat</a><br>
+            <a href="crm.html">CRM interne</a><br>
+            <a href="strategie.html">Dossier stratégique</a><br>
+            <a href="communication.html">Plan de communication</a><br>
+            <a href="conformite.html">Checklist de l'épreuve</a>
+          </div>
+          <div>
+            <strong style="color:#fff">Contact (démo)</strong><br>
+            bonjour@noyau-demo.fr<br>
+            04 00 00 00 00<br>
+            Lyon 2e · Paris 11e
+          </div>
+        </div>
+        <div class="legal">Projet étudiant INSEEC, démo sans vente réelle. Aucun paiement n'est encaissé, toutes les coordonnées, entreprises clientes et témoignages présents sur ce site sont fictifs. Les marques citées (concurrents, partenaires visés) n'ont aucun lien avec ce projet. Photos : Unsplash (licence libre), personnes non liées à Noyau.</div>
+      </div>
+    </footer>
+<script src="assets/site.js?v=4"></script>
 <script>
   const qs = new URLSearchParams(location.search);
   const O = window.NOYAU_OFFERS;

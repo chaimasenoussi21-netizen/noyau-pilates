@@ -1,0 +1,13 @@
+# Noyau — Pilates en entreprise (projet étudiant INSEEC, démo sans vente réelle)
+
+> Site de démonstration réalisé pour l'épreuve « IA : créer et lancer un produit » (INSEEC Grande École). Noyau installe des séances de Pilates de 45 minutes dans les locaux des entreprises à Lyon et Paris, pour des salariés sédentaires. Aucun paiement réel ; toutes les données du CRM sont fictives.
+
+## Les 4 espaces demandés par la consigne
+- [Offre et vente](https://noyau-pilates.vercel.app/): promesse, 3 formules (390, 690 et 1 290 € HT par mois), événements, FAQ, contact
+- [Achat simulé](https://noyau-pilates.vercel.app/commander): parcours jusqu'à la [confirmation](https://noyau-pilates.vercel.app/confirmation), paiement simulé
+- [CRM](https://noyau-pilates.vercel.app/crm): 22 contacts fictifs, fiches, pipeline en 5 étapes, tableau de bord (CA, clients, taux de conversion) ; une commande passée sur le site apparaît dans le CRM
+- [Dossier stratégique](https://noyau-pilates.vercel.app/strategie): problème, 2 personas, marché sourcé, 4 concurrents avec prix, justification du prix, modèle économique et objectif à 12 mois, 12 sources
+- [Plan de communication](https://noyau-pilates.vercel.app/communication): plateforme de marque, canaux, 9 posts complets sur LinkedIn, Instagram et TikTok, calendrier sur 4 semaines, 5 partenariats, plan pour les 10 premiers clients, indicateurs
+
+## Vérification
+- [Checklist de l'épreuve](https://noyau-pilates.vercel.app/conformite): chaque exigence de la consigne reliée à l'endroit du site où elle est remplie
