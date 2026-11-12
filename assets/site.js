@@ -40,7 +40,7 @@ window.NOYAU_OFFERS = {
             <span class="n">0${i + 1}</span><span class="t">${label}<small>${sub}</small></span></a>`).join("")}
       </nav>
       <div class="side-foot">
-        <a href="commander.html" class="btn btn-primary">Réserver</a>
+        <a href="index.html#contact" class="btn btn-primary">Séance d'essai offerte</a>
         <p>Lyon · Paris<br>Séances de 45 min dans vos locaux</p>
       </div>`;
   }

@@ -122,8 +122,8 @@
       db.contacts.unshift({ id, nom: d.nom || "Contact sans nom", poste: "Non renseigné", entreprise: d.entreprise || "Entreprise",
         secteur: "À qualifier", ville: "Non renseignée", effectif: d.effectif, source: "Site web", stage: "nouveau", offre,
         valeur: OFFERS[offre], email: d.email, tel: "Non renseigné",
-        historique: [h(today(), "Site web", (d.evenement ? "Demande d'événement : " + d.evenement : "Formulaire de contact") + (d.message ? " · « " + d.message + " »" : "."))],
-        prochaine: { date: plusDays(1), label: d.evenement ? "Envoyer le devis événement et proposer des dates" : "Rappeler sous 24 h" },
+        historique: [h(today(), "Site web", (d.essai ? "Demande de séance d'essai gratuite" : d.evenement ? "Demande d'événement : " + d.evenement : "Formulaire de contact") + (d.message ? " · « " + d.message + " »" : "."))],
+        prochaine: { date: plusDays(1), label: d.essai ? "Appeler pour fixer la date de la séance d'essai" : d.evenement ? "Envoyer le devis événement et proposer des dates" : "Rappeler sous 24 h" },
         creeLe: today(), evenement: d.evenement || "" });
       save(db); return id;
     },

@@ -301,3 +301,15 @@ body[data-page="vente"] main > section.section > .wrap::before{content:"0" count
 .js-reveal .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js-reveal .reveal{opacity:1;transform:none;transition:none}.sticker svg,.float-price{animation:none}}
 .stack .s2{height:auto}.gallery img{height:100%}
+
+/* Section coachs */
+.coach{text-align:left}
+.avatar-c{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--serif);font-size:1.5rem;font-weight:600;margin-bottom:14px;box-shadow:0 0 0 5px var(--sand-2)}
+.coach h3{margin:0}
+.coach .role{color:var(--clay-2);font-weight:600;font-size:.88rem;margin:2px 0 10px}
+.coach ul{list-style:none;padding:0;margin:0 0 12px;font-size:.9rem}
+.coach li{padding:4px 0 4px 20px;position:relative;color:var(--muted)}
+.coach li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.coach .tag-c{display:inline-block;background:var(--sand);border-radius:999px;padding:4px 12px;font-size:.8rem;font-weight:600;color:var(--forest);margin:0}
+@media (max-width:1023px){.side-foot .btn{white-space:nowrap;font-size:.78rem;padding:8px 12px}.side .brand small{white-space:nowrap}}
+@media (max-width:380px){.side .brand small{display:none}}
